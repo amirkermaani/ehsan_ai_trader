@@ -34,7 +34,7 @@ POLL_SECONDS = int(os.getenv("POLL_SECONDS", "900"))
 exchange_class = getattr(ccxt, EXCHANGE_ID, None)
 if exchange_class is None:
     raise RuntimeError(f"Unsupported CCXT exchange id: {EXCHANGE_ID}")
-exchange = exchange_class({"enableRateLimit": True, "options": {"defaultType": "swap"}})
+exchange = exchange_class({"enableRateLimit": True})
 book = PaperBook("paper_book.json", STARTING_BALANCE)
 
 def fmt(x: float) -> str:
