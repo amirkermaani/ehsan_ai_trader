@@ -20,7 +20,7 @@ log = logging.getLogger("ehsan-ai-trader")
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 EXCHANGE_ID = os.getenv("EXCHANGE_ID", "binance").strip()
 DEFAULT_SYMBOLS = [s.strip().upper() for s in os.getenv(
-    "SYMBOLS", "BTC/USDT,ETH/USDT,SOL/USDT"
+    "SYMBOLS", "BTC/USD,ETH/USD,SOL/USD"
 ).split(",") if s.strip()]
 TIMEFRAMES = [s.strip() for s in os.getenv("TIMEFRAMES", "1h,4h,1d").split(",") if s.strip()]
 STARTING_BALANCE = float(os.getenv("PAPER_BALANCE", "100"))
